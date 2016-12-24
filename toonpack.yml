@@ -11,3 +11,6 @@ CustomPreferences  :
     explainxkcd :
         description : "Show link to Explain XKCD with XKCD comics"
         default     : "false"
+    talesdescription :
+        description : "Show original post description on Tales of Mere Existance"
+        default     : "true"
