@@ -7,21 +7,16 @@ from BeautifulSoup import BeautifulSoup
 from datetime import datetime, time, timedelta
 
 def fetch_comic(comicname, fetch_timeout):
-    dateformat = '%Y/%m/%d'
     comictitle = "Garfield"
 
-    now = datetime.now()
-    today = now.today()
-    today_str = today.strftime(dateformat)
-
     try:
-        url = 'http://www.gocomics.com/garfield/' + today_str
+        url = 'http://www.gocomics.com/garfield/'
         headers = { 'User-Agent' : 'Toonbot/1.0' }
         req = urllib2.Request(url, None, headers)
         site = urllib2.urlopen(req, timeout=fetch_timeout).read()
         soup = BeautifulSoup(site)
         comic = (soup.find("meta", attrs={'property':'og:image'})["content"]).encode('utf8')
-        link = url
+        link = (soup.find("input", attrs={'title':'Get the Permalink'})["value"]).encode('utf8')
         prehash = comic
         hash = hashlib.md5()
         hash.update(prehash)
