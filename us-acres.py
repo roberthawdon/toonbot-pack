@@ -9,8 +9,13 @@ from datetime import datetime, time, timedelta
 def fetch_comic(comicname, fetch_timeout):
     comictitle = "U.S. Acres"
 
+    dateformat = '%Y/%m/%d'
+    now = datetime.now()
+    today = now.today()
+    today_str = today.strftime(dateformat)
+
     try:
-        url = 'http://www.gocomics.com/us-acres/'
+        url = 'http://www.gocomics.com/us-acres/' + today_str
         headers = { 'User-Agent' : 'Toonbot/1.0' }
         req = urllib2.Request(url, None, headers)
         site = urllib2.urlopen(req, timeout=fetch_timeout).read()
