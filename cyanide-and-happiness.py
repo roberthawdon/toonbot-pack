@@ -16,7 +16,7 @@ def fetch_comic(comicname, fetch_timeout):
         soup = BeautifulSoup(site)
         comicurl = "http:" + (soup.find("img", attrs={'id':'main-comic'})["src"]).encode('utf8')
         comic = urllib.quote(comicurl, safe=':/?=&')
-        link = (soup.find("input", attrs={'id':'permalink'})["value"]).encode('utf8')
+        link = (soup.find("a", attrs={'id':'comic-social-link'})["href"]).encode('utf8')
         prehash = comic
         hash = hashlib.md5()
         hash.update(prehash)
