@@ -5,7 +5,7 @@ PackUUID           : "bdb6de31-0f30-4e28-b15c-e6b64be2cbff"
 PackCode           : "classic"
 PackName           : "Classic Toon Bot comics"
 PackDescription    : "Classic comics shipped with toonbot prior to Toon Bot Version 0.8"
-Version            : "0.8"
+Version            : "0.8.1"
 PackGen            : "1"
 CustomPreferences  :
     explainxkcd :
