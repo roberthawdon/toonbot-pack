@@ -11,7 +11,7 @@ def fetch_comic(comicname, fetch_timeout):
     comictitle = "Tales Of Mere Existence"
 
     try:
-        url = 'http://levniyilmaz.tumblr.com/rss'
+        url = 'https://levniyilmaz.tumblr.com/rss'
         headers = { 'User-Agent' : 'Toonbot/1.0' }
         req = urllib2.Request(url, None, headers)
         site = urllib2.urlopen(req, timeout=fetch_timeout).read()
